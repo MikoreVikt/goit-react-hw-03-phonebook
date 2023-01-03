@@ -49,8 +49,11 @@ export class App extends Component {
 
     componentDidMount() {
         const contactsMemory = localStorage.getItem('contactsMemory')
-        const parsedContactsMemory = JSON.parse(contactsMemory)
-        this.setState({contacts: parsedContactsMemory})
+        if (contactsMemory) {
+            const parsedContactsMemory = JSON.parse(contactsMemory)
+            this.setState({contacts: parsedContactsMemory})
+        }
+        return
     }
 
     componentDidUpdate(prevProps, prevState) {
