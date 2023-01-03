@@ -47,17 +47,17 @@ export class App extends Component {
         }))
     }
 
-    // componentDidMount() {
-    //     const contactsMemory = localStorage.getItem('contactsMemory')
-    //     const parsedContactsMemory = JSON.parse(contactsMemory)
-    //     this.setState({contacts: parsedContactsMemory})
-    // }
+    componentDidMount() {
+        const contactsMemory = localStorage.getItem('contactsMemory')
+        const parsedContactsMemory = JSON.parse(contactsMemory)
+        this.setState({contacts: parsedContactsMemory})
+    }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if (this.state.contacts !== prevState.contacts) {
-    //         localStorage.setItem('contactsMemory', JSON.stringify(this.state.contacts))
-    //     }
-    // }
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.contacts !== prevState.contacts) {
+            localStorage.setItem('contactsMemory', JSON.stringify(this.state.contacts))
+        }
+    }
     
     render() {    
         return (
