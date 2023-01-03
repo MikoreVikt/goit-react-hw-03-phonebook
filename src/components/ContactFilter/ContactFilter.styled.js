@@ -12,7 +12,5 @@ export const Label = styled.label`
 export const Input = styled.input`
   font-size: 18px;
   padding: 6px 10px;
-  box-shadow: 0 0 2px;
   border-radius: 5px;
-  border: none;
 `;
