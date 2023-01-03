@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Component } from "react";
-import { Form, Label, Button } from "./ContactForm.styled";
+import { Form, Label, Input, Button } from "./ContactForm.styled";
 
 export class ContactForm extends Component {
     static propTypes = {
@@ -29,7 +29,7 @@ export class ContactForm extends Component {
         return (
             <Form onSubmit={this.handleSubmit}>
                 <Label>Name 
-                    <input
+                    <Input
                         onChange={this.handleInputChange}
                         value={this.state.name}
                         type="text"
@@ -40,7 +40,7 @@ export class ContactForm extends Component {
                     />
                 </Label>
                 <Label>Number 
-                    <input
+                    <Input
                         onChange={this.handleInputChange}
                         value={this.state.number}
                         type="tel"

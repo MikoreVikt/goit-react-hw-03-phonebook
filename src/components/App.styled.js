@@ -7,7 +7,8 @@ export const Wrapper = styled.div`
   width: 400px;
   margin: 50px auto;
   padding: 40px;
-  box-shadow: black 2px 2px 4px;
+  box-shadow: black 0 0 4px;
+  border-radius: 5px;
   row-gap: 20px;
 `;
 

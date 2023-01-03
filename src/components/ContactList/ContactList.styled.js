@@ -5,5 +5,5 @@ export const List = styled.ul`
   flex-direction: column;
   margin: 0;
   padding: 0;
-  row-gap: 5px;
+  row-gap: 20px;
 `;
