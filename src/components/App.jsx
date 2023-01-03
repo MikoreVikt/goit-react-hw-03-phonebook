@@ -12,6 +12,21 @@ export class App extends Component {
         filter: '',
     }
 
+    componentDidMount() {
+        const contactsMemory = localStorage.getItem('contactsMemory')
+        if (contactsMemory) {
+            const parsedContactsMemory = JSON.parse(contactsMemory)
+            this.setState({contacts: parsedContactsMemory})
+        }
+        return
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.contacts !== prevState.contacts) {
+            localStorage.setItem('contactsMemory', JSON.stringify(this.state.contacts))
+        }
+    }
+
     handleInputChange = (e) => {
         this.setState({[e.currentTarget.name]: e.currentTarget.value})
     }
@@ -45,21 +60,6 @@ export class App extends Component {
         this.setState(prevState => ({
             contacts: prevState.contacts.filter(el => el.id !== id),
         }))
-    }
-
-    componentDidMount() {
-        const contactsMemory = localStorage.getItem('contactsMemory')
-        if (contactsMemory) {
-            const parsedContactsMemory = JSON.parse(contactsMemory)
-            this.setState({contacts: parsedContactsMemory})
-        }
-        return
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (this.state.contacts !== prevState.contacts) {
-            localStorage.setItem('contactsMemory', JSON.stringify(this.state.contacts))
-        }
     }
     
     render() {    
