@@ -18,7 +18,6 @@ export class App extends Component {
             const parsedContactsMemory = JSON.parse(contactsMemory)
             this.setState({contacts: parsedContactsMemory})
         }
-        return
     }
 
     componentDidUpdate(prevProps, prevState) {
